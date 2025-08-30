@@ -1,22 +1,28 @@
-function solution(string) {
-  const arr =  string.split("")
-  const capArr = []
-  // const capital array = [Casing]
-  arr.forEach((char) => {
-    if(char === char.toUpperCase()) {
-      capArr.push(' ')
-    }
-    capArr.push(char)
-  });
+// function solution(string) {
+//  const arr =  string.split("")
+//  const capArr = []
+//  arr.forEach((char) => {
+//    if(char === char.toUpperCase()) {
+//      capArr.push(' ')
+//    }
+//    capArr.push(char)
+//  });
 
-  return capArr.join('')
+//  return capArr.join('')
+//}
 
-  
-  //create a counter variable on how many upperCases in the word
-  //Make a for of loop
-  //if count > 0 make space before the UpperCase
-  //convert array to string
+//console.log(solution("camelCasing"));
+
+
+function humanReadable (seconds) {
+  const m = Math.floor(seconds / 60).toString().padStart(2, '0')
+  const remainM = Math.floor(m % 60).toString().padStart(2, '0')
+  const remainS = Math.floor(seconds % 60).toString().padStart(2, '0')
+  const h = Math.floor(m / 60).toString().padStart(2, '0')
+  return `${h}:${remainM}:${remainS}`
 }
 
-console.log(solution("camelCasing"));
+
+console.log(humanReadable(60));
+console.log(humanReadable(3600));
 
