@@ -25,6 +25,10 @@ function humanReadable (seconds) {
 }
 
 
-console.log(humanReadable(60));
-console.log(humanReadable(3600));
+//console.log(humanReadable(60));
+//console.log(humanReadable(3600));
 
+
+function booleanToString(b){
+  return b.toString()
+} 
