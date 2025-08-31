@@ -32,3 +32,9 @@ function humanReadable (seconds) {
 function booleanToString(b){
   return b.toString()
 } 
+
+function digitize(n) {
+  return  n.toString().split('').reverse().n.map(num => Number(num))
+}
+
+console.log(digitize(32451));
