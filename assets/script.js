@@ -37,4 +37,8 @@ function digitize(n) {
   return  n.toString().split('').reverse().n.map(num => Number(num))
 }
 
-console.log(digitize(32451));
+// console.log(digitize(32451));
+
+function evenOrOdd(number) {
+  return number % 2 === 0 ? 'Even' : 'Odd'
+}
