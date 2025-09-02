@@ -42,3 +42,19 @@ function digitize(n) {
 function evenOrOdd(number) {
   return number % 2 === 0 ? 'Even' : 'Odd'
 }
+
+function duplicateCount(text){
+  let str = text.toLowerCase()
+  let count = {}
+  let result = 0
+
+  for(char of str) {
+    count[char] = (count[char] || 0) + 1
+      if(count[char] === 2) {
+      result++
+    }
+  }
+  return result
+}
+
+console.log(duplicateCount('Indivisibility'));
