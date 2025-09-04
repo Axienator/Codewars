@@ -59,22 +59,6 @@ function duplicateCount(text){
 
 // console.log(duplicateCount('Indivisibility'));
 
-function scramble(str1, str2) {
-  let strA = str1.toLowerCase()
-  let strB = str2.toLowerCase()
-  
-  //convert a string to an array.
-  // check every element in strA, if a specific letters on strB has it on strA = return true
-  for(let i = 0; i > strA.length; i++) {
-    strB.includes(strA) ? true : false
-  }
-  
-
-}
-
-//console.log(scramble('waporlsiodja', 'world'));
-
-
 var uniqueInOrder=function(iterable){
   let result = []
 
@@ -87,4 +71,12 @@ var uniqueInOrder=function(iterable){
   return result
 }
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB')) // ['A','B','C','D','A','B']
+// console.log(uniqueInOrder('AAAABBBCCDAABBB')) // ['A','B','C','D','A','B']
+
+function DNAtoRNA(dna) {
+  const arr = Array.from(dna)
+  return arr.map(char => char === 'T' ? 'U' : char).join('')
+}
+
+console.log(DNAtoRNA('GCAT'));
+
