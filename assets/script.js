@@ -78,5 +78,18 @@ function DNAtoRNA(dna) {
   return arr.map(char => char === 'T' ? 'U' : char).join('')
 }
 
-console.log(DNAtoRNA('GCAT'));
+//console.log(DNAtoRNA('GCAT'));
+
+var findClosest = function(x, y, z) {
+  let XZ = Math.abs(x - z)
+  let YZ = Math.abs(y - z)
+  if(XZ === YZ) return 0
+  if(XZ <= YZ) return 1
+  if(YZ <= XZ) return 2
+
+};
+
+
+console.log(findClosest(1, 5, 3));
+
 
