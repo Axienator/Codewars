@@ -86,10 +86,21 @@ var findClosest = function(x, y, z) {
   if(XZ === YZ) return 0
   if(XZ <= YZ) return 1
   if(YZ <= XZ) return 2
-
 };
 
+//console.log(findClosest(1, 5, 3));
 
-console.log(findClosest(1, 5, 3));
+
+var threeConsecutiveOdds = function(arr) {
 
 
+  const filter = arr.filter(num => num % 2 !== 0)
+
+  if(filter.length > 2) {
+    return true
+  } else {
+    return false
+  }
+};
+
+console.log(threeConsecutiveOdds([3,6,5,4,1]));
