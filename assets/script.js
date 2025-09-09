@@ -92,15 +92,45 @@ var findClosest = function(x, y, z) {
 
 
 var threeConsecutiveOdds = function(arr) {
-
-
   const filter = arr.filter(num => num % 2 !== 0)
 
-  if(filter.length > 2) {
-    return true
-  } else {
-    return false
-  }
+  return filter.length > 2 ? true : false
 };
 
-console.log(threeConsecutiveOdds([3,6,5,4,1]));
+// console.log(threeConsecutiveOdds([3,6,5,4,1]));
+
+
+function isSolved(board) {
+
+  // row
+  for(row of board) {
+    if (row.every(cell => cell === 1)) return 1
+    if (row.every(cell => cell === 2)) return 2
+  }
+  
+  //column
+  for(let i = 0; i < 3; i++) {
+    if(board[0][i] !== 0 && board[0][i] === board[1][i] && board[1][i] === board[2][i]) {
+      return board[0][i]
+    }
+
+   //diagonal
+
+   if(board[0][0] !== 0 && board[0][0] === board[1][1] && board[1][1] === board[2][2]) return board[1][1]
+   if(board[0][2] !== 0 && board[0][2] === board[1][1] && board[1][1] === board[2][0]) return board[1][1]
+  }
+
+  //if there is 0 but there is also a 3 1's || 2's it should not be -1
+
+  for(cell of board) {
+    if(cell.includes(0)) return -1
+  } 
+
+  return 0
+}
+console.log(isSolved(
+  [
+   [0, 1, 1],    // row 0
+   [2, 0, 2],    // row 1
+   [2, 1, 0]     // row 2
+  ]))    
